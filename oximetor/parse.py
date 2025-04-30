@@ -7,8 +7,8 @@ def parse_spo2_pr(data):
     # print(f"Data list: {bytes_list}")
 
     # ต้องมีอย่างน้อย 5 bytes
-    if len(bytes_list) < 5:
-        print("Data too short")
+    if len(bytes_list) < 6:
+        # print("Data too short")
         return None, None
 
     # นับจากท้าย:
