@@ -5,3 +5,4 @@ def handle_temperature(sender,data):
     # print(f"Data hex: {data_hex}")
     temp = parse_temperature(data_hex)
     print(f"Temperature is: {temp} °C")
+    return

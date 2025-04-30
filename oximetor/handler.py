@@ -7,3 +7,4 @@ def handle_OxSat(sender, data):
         print(f"SpO2: {oxsat_decimal} %, PR: {bpm} bpm")
     else:
         print("Failed to parse data")
+    return
