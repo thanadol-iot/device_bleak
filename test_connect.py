@@ -12,11 +12,14 @@ async def explore_device(address):
                 return
 
             print(f"Connected to {address}")
+            
+            # เพิ่ม delay หลังจากเชื่อมต่อสำเร็จ
+            await asyncio.sleep(2)  # Delay 2 วินาที
 
             services = await client.get_services()
 
             for service in services:
-                print(f"\n🔧 Service: {service.uuid} ({service.description})")
+                print(f"\nService: {service.uuid} ({service.description})")
                 for char in service.characteristics:
                     props = ", ".join(char.properties)
                     print(f"Characteristic: {char.uuid}")
@@ -24,6 +27,8 @@ async def explore_device(address):
 
                     if "read" in char.properties:
                         try:
+                            # เพิ่ม delay ก่อนอ่านค่า
+                            await asyncio.sleep(1)  # Delay 1 วินาที
                             value = await client.read_gatt_char(char.uuid)
                             print(f"Value: {value}")
                         except Exception as e:
