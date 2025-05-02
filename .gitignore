@@ -175,3 +175,6 @@ cython_debug/
 
 .env
 ohm.py
+old_main.py
+one_connection.py
+test_connection.py
